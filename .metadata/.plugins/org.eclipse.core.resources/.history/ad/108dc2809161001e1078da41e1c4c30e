@@ -1,0 +1,40 @@
+package holaam;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+
+public class bbbb {
+
+	private JFrame frmLista;
+
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					bbbb window = new bbbb();
+					window.frmLista.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	
+	public bbbb() {
+		initialize();
+	}
+
+	
+	private void initialize() {
+		frmLista = new JFrame();
+		frmLista.setTitle("Lista");
+		frmLista.setBounds(100, 100, 511, 324);
+		frmLista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmLista.setLocationRelativeTo(null);
+		frmLista.getContentPane().setLayout(null);
+	}
+
+}

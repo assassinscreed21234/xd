@@ -1,0 +1,76 @@
+package holaam;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JList;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class bbbb {
+
+	private JFrame frmLista;
+	private JList lstNombres;
+	private JTextField txtNombre;
+	private JButton btnAgregar;
+	private JLabel lblNewLabel;
+	DefaultListModel model=new DefaultListModel();
+
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					bbbb window = new bbbb();
+					window.frmLista.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	
+	public bbbb() {
+		initialize();
+	}
+
+	
+	private void initialize() {
+		frmLista = new JFrame();
+		frmLista.setTitle("Lista");
+		frmLista.setBounds(100, 100, 511, 324);
+		frmLista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmLista.setLocationRelativeTo(null);
+		frmLista.getContentPane().setLayout(null);
+		
+		lstNombres = new JList();
+
+		lstNombres.setBounds(23, 105, 203, 169);
+		frmLista.getContentPane().add(lstNombres);
+		
+		txtNombre = new JTextField();
+		txtNombre.setBounds(99, 36, 86, 20);
+		frmLista.getContentPane().add(txtNombre);
+		txtNombre.setColumns(10);
+		
+		lblNewLabel = new JLabel("Nombre");
+		lblNewLabel.setBounds(48, 39, 46, 14);
+		frmLista.getContentPane().add(lblNewLabel);
+		
+		btnAgregar = new JButton("Agregar");
+		btnAgregar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				model.addElement(txtNombre.getText());
+				lstNombres.setModel(model);
+			}
+		});
+		btnAgregar.setBounds(96, 67, 89, 23);
+		frmLista.getContentPane().add(btnAgregar);
+	}
+
+}

@@ -1,0 +1,64 @@
+package holaam;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JProgressBar;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class kuhqrwjas {
+
+	private JFrame frame;
+	private JButton btnSTAR;
+	private JProgressBar barraProgreso;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					kuhqrwjas window = new kuhqrwjas();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public kuhqrwjas() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		barraProgreso = new JProgressBar();
+		barraProgreso.setStringPainted(true);
+		barraProgreso.setMaximum(0);
+		barraProgreso.setBounds(85, 30, 240, 71);
+		frame.getContentPane().add(barraProgreso);
+		
+		btnSTAR = new JButton("STAR");
+		btnSTAR.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				star
+			}
+		});
+		btnSTAR.setBounds(122, 138, 186, 71);
+		frame.getContentPane().add(btnSTAR);
+	}
+}
